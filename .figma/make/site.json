@@ -1,0 +1,14 @@
+{
+  "title": "Gulf Paradigm | Industrial Services & Logistics",
+  "description": "Gulf Paradigm — Integrated Heavy Equipment Rental, Manpower Supply, Industrial Materials, Steel Fabrication & Logistics across Saudi Arabia.",
+  "icons": {
+    "icon": "/favicon.png"
+  },
+  "robots": {
+    "index": true
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

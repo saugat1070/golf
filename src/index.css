@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-display: 'Archivo', sans-serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  --color-navy-950: #050b1a;
+  --color-navy-900: #0a1428;
+  --color-navy-800: #0f1e3d;
+  --color-navy-700: #16294f;
+  --color-navy-600: #1f3a6b;
+
+  --color-cyan-400: #35c0ee;
+  --color-cyan-500: #1ba8e0;
+  --color-cyan-600: #1489c2;
+
+  --color-steel-100: #eef3f8;
+  --color-steel-200: #dae4ef;
+  --color-steel-300: #b9c8db;
+  --color-steel-500: #64748b;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: #ffffff;
+  color: var(--color-navy-900);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-cyan-500);
+  color: #fff;
+}
+
+/* hide scrollbars until scrolling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+*:hover {
+  scrollbar-color: var(--color-navy-600) transparent;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 8px;
+}
+*:hover::-webkit-scrollbar-thumb {
+  background: var(--color-navy-600);
+}
+
+@keyframes gp-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.gp-rise {
+  animation: gp-rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes gp-spin { to { transform: rotate(360deg); } }
+.gp-spin { animation: gp-spin 20s linear infinite; transform-box: fill-box; transform-origin: center; }
+@media (prefers-reduced-motion: reduce) { .gp-spin { animation: none; } }
+
+@keyframes marquee-ltr {
+  from { transform: translateX(-50%); }
+  to { transform: translateX(0); }
+}
+.animate-marquee-ltr {
+  animation: marquee-ltr 35s linear infinite;
+}
+
+/* ---- isometric operations scene ---- */
+@keyframes iso-truck-in {
+  0% { transform: translate(-150px, 0); opacity: 0; }
+  14% { opacity: 1; }
+  52% { transform: translate(0, 0); }
+  86% { transform: translate(0, 0); opacity: 1; }
+  100% { transform: translate(-55px, 0); opacity: 0; }
+}
+.iso-truck { animation: iso-truck-in 8s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+
+@keyframes iso-fork {
+  0% { transform: translate(0, 0); }
+  100% { transform: translate(-26px, -15px); }
+}
+.iso-fork { animation: iso-fork 3.4s ease-in-out infinite alternate; }
+
+@keyframes iso-lift {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-15px); }
+}
+.iso-forkload { animation: iso-lift 3.4s ease-in-out infinite alternate; }
+
+@keyframes iso-arrow {
+  0%, 100% { opacity: 0.35; transform: translateX(-4px); }
+  50% { opacity: 1; transform: translateX(4px); }
+}
+.iso-arrow { animation: iso-arrow 1.7s ease-in-out infinite; }
+
+@keyframes iso-worker {
+  0% { transform: translate(-28px, -14px); }
+  100% { transform: translate(38px, 19px); }
+}
+.iso-worker { animation: iso-worker 7s ease-in-out infinite alternate; }
+
+@keyframes iso-legA { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-3px); } }
+@keyframes iso-legB { 0%, 100% { transform: translateY(-3px); } 50% { transform: translateY(0); } }
+.iso-leg-a { animation: iso-legA 0.6s ease-in-out infinite; }
+.iso-leg-b { animation: iso-legB 0.6s ease-in-out infinite; }
+
+@keyframes iso-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
+.iso-float { animation: iso-float 5s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  .iso-truck, .iso-fork, .iso-forkload, .iso-arrow,
+  .iso-worker, .iso-leg-a, .iso-leg-b, .iso-float {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+/* engineered blueprint grid (dark ground) */
+.gp-grid {
+  background-image:
+    linear-gradient(rgba(53, 192, 238, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(53, 192, 238, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+/* engineered blueprint grid (light ground) */
+.gp-grid-light {
+  background-image:
+    linear-gradient(rgba(20, 137, 194, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 137, 194, 0.07) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
