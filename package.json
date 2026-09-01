@@ -10,6 +10,8 @@
     "format": "oxfmt"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
+    "@vercel/speed-insights": "^2.0.0",
     "framer-motion": "^13.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

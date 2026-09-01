@@ -1,3 +1,5 @@
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import Stats from "./components/Stats";
@@ -13,6 +15,8 @@ export default function App() {
   return (
     <div className="min-h-full bg-navy-950 font-sans">
       <Header />
+      <Analytics />
+      <SpeedInsights />
       <main>
         <Hero />
         <Stats />
