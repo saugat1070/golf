@@ -1,0 +1,4 @@
+user-agent: *
+Allow: /
+
+Sitemap: https://www.gulfparadigm.com/sitemap.xml
