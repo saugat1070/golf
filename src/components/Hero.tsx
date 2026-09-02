@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 const SLIDES = [
   {
-    src: "/images/services/builing-2.jpeg",
+    src: "/images/services/building-2.webp",
     alt: "Modern architecture and large-scale industrial facility construction",
   },
   {
