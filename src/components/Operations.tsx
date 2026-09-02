@@ -1,6 +1,41 @@
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
+import { OPERATIONS_SLIDES } from "../data/constants";
 import Kicker from "./Kicker";
-import { IsoScene } from "./IsoScene";
+
+const INTERVAL = 4000;
+
+function OperationsSlideshow() {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % OPERATIONS_SLIDES.length);
+    }, INTERVAL);
+    return () => clearInterval(timer);
+  }, []);
+
+  const activeSlide = OPERATIONS_SLIDES[current];
+
+  return (
+    <div className="relative overflow-hidden rounded-2xl h-100 lg:h-120">
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={activeSlide.id}
+          src={activeSlide.img}
+          alt={activeSlide.alt}
+          loading="lazy"
+          decoding="async"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="absolute inset-0 h-full w-full object-contain"
+        />
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export default function Operations() {
   const highlights = [
@@ -33,10 +68,11 @@ export default function Operations() {
             Single-Source Execution — From Yard to Site Handover
           </h2>
           <p className="mt-6 max-w-lg font-sans leading-relaxed text-steel-500">
-            Gulf Paradigm synchronizes heavy equipment rentals, certified site manpower, 
-            industrial materials, and steel fabrication into a seamless operational pipeline. 
-            Our regional logistics network guarantees zero downtime and rapid mobilization across 
-            Saudi Arabia&apos;s major industrial hubs.
+            Gulf Paradigm synchronizes heavy equipment rentals, certified site
+            manpower, industrial materials, and steel fabrication into a
+            seamless operational pipeline. Our regional logistics network
+            guarantees zero downtime and rapid mobilization across Saudi
+            Arabia&apos;s major industrial hubs.
           </p>
           <div className="mt-8 space-y-4">
             {highlights.map((item, idx) => (
@@ -63,7 +99,7 @@ export default function Operations() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}
           className="relative"
         >
-          <IsoScene />
+          <OperationsSlideshow />
         </motion.div>
       </div>
     </section>

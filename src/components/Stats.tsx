@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import { STATS } from "../data/constants";
+import { motion } from "framer-motion"
+import { STATS } from "../data/constants"
 
 export default function Stats() {
   return (
@@ -25,5 +25,5 @@ export default function Stats() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

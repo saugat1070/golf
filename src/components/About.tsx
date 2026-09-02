@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import Kicker from "./Kicker";
+import { motion } from "framer-motion"
+import Kicker from "./Kicker"
 
 export default function About() {
   return (
@@ -62,6 +62,8 @@ export default function About() {
             <img
               src="https://images.unsplash.com/photo-1623489254637-a2dd8375243d?w=900&h=1100&fit=crop&auto=format"
               alt="Construction worker on an industrial structure"
+              loading="lazy"
+              decoding="async"
               className="h-full w-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 to-transparent" />
@@ -77,5 +79,5 @@ export default function About() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }

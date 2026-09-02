@@ -1,21 +1,20 @@
-import { useEffect, useState } from "react";
-import { NAV } from "../data/constants";
-import logoImage from "../imports/logo-1.jpeg";
+import { useEffect, useState } from "react"
+import { NAV } from "../data/constants"
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll);
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
 
   const go = (id: string) => {
-    setOpen(false);
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
-  };
+    setOpen(false)
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <header
@@ -28,9 +27,11 @@ export default function Header() {
       <div className="mx-auto flex max-w-[90%] items-center justify-between px-6 py-4 lg:px-10">
         <button onClick={() => go("top")} className="text-left">
           <img
-            src={logoImage}
+            src="/logo/logo-1.jpeg"
             alt="Gulf Paradigm General Contracting logo"
-            className="h-10 w-auto sm:h-11"
+            loading="lazy"
+            decoding="async"
+            className="h-11 w-auto sm:h-12 lg:h-13"
           />
         </button>
         <nav className="hidden items-center gap-9 lg:flex">
@@ -51,13 +52,19 @@ export default function Header() {
         >
           <div className="space-y-1.5">
             <span
-              className={`block h-0.5 w-6 bg-current transition ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`block h-0.5 w-6 bg-current transition ${
+                open ? "translate-y-2 rotate-45" : ""
+              }`}
             />
             <span
-              className={`block h-0.5 w-6 bg-current transition ${open ? "opacity-0" : ""}`}
+              className={`block h-0.5 w-6 bg-current transition ${
+                open ? "opacity-0" : ""
+              }`}
             />
             <span
-              className={`block h-0.5 w-6 bg-current transition ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`block h-0.5 w-6 bg-current transition ${
+                open ? "-translate-y-2 -rotate-45" : ""
+              }`}
             />
           </div>
         </button>
@@ -76,5 +83,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  );
+  )
 }

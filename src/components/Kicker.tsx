@@ -6,5 +6,5 @@ export default function Kicker({ children }: { children: React.ReactNode }) {
         {children}
       </span>
     </div>
-  );
+  )
 }

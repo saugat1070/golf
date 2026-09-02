@@ -6,10 +6,10 @@ import Stats from "./components/Stats";
 import Operations from "./components/Operations";
 import About from "./components/About";
 import Services from "./components/Services";
-import Fleet from "./components/Fleet";
 import Clients from "./components/Clients";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import WhatsAppButton from "./components/WhatsAppButton";
 
 export default function App() {
   return (
@@ -19,15 +19,15 @@ export default function App() {
       <SpeedInsights />
       <main>
         <Hero />
-        <Stats />
         <Operations />
         <About />
         <Services />
-        <Fleet />
+        {/* <Fleet /> */}
         <Clients />
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </div>
   );
 }

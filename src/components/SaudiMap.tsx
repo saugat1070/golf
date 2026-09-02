@@ -19,10 +19,10 @@ const CITIES = [
   { name: "Yanbu", x: 145, y: 310 },
   { name: "Jubail", x: 493, y: 194 },
   { name: "NEOM", x: 60, y: 120 },
-];
+]
 
 const COUNTRY_PATH =
-  "M 25 110 L 64 136 L 80 97 L 95 85 L 127 12 L 159 0 L 223 19 L 302 97 L 382 116 L 414 97 L 430 116 L 445 136 L 493 194 L 509 213 L 525 233 L 541 252 L 557 271 L 541 291 L 557 310 L 573 349 L 668 388 L 636 465 L 573 504 L 509 523 L 445 543 L 414 581 L 350 562 L 318 581 L 286 581 L 271 562 L 255 543 L 239 484 L 223 446 L 191 426 L 175 388 L 159 368 L 143 349 L 127 310 L 111 271 L 95 233 L 80 194 L 64 155 L 16 155 Z";
+  "M 25 110 L 64 136 L 80 97 L 95 85 L 127 12 L 159 0 L 223 19 L 302 97 L 382 116 L 414 97 L 430 116 L 445 136 L 493 194 L 509 213 L 525 233 L 541 252 L 557 271 L 541 291 L 557 310 L 573 349 L 668 388 L 636 465 L 573 504 L 509 523 L 445 543 L 414 581 L 350 562 L 318 581 L 286 581 L 271 562 L 255 543 L 239 484 L 223 446 L 191 426 L 175 388 L 159 368 L 143 349 L 127 310 L 111 271 L 95 233 L 80 194 L 64 155 L 16 155 Z"
 
 export default function SaudiMap({ className = "" }: { className?: string }) {
   return (
@@ -79,8 +79,8 @@ export default function SaudiMap({ className = "" }: { className?: string }) {
 
       {/* city markers */}
       {CITIES.map((city) => {
-        const isHighlight = city.highlight;
-        const isCapital = city.capital;
+        const isHighlight = city.highlight
+        const isCapital = city.capital
         return (
           <g key={city.name}>
             {/* pulse ring for highlighted city */}
@@ -125,7 +125,7 @@ export default function SaudiMap({ className = "" }: { className?: string }) {
               {city.name}
             </text>
           </g>
-        );
+        )
       })}
 
       {/* Al Khobar badge */}
@@ -153,5 +153,5 @@ export default function SaudiMap({ className = "" }: { className?: string }) {
         </text>
       </g>
     </svg>
-  );
+  )
 }

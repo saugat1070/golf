@@ -1,5 +1,4 @@
-import { NAV } from "../data/constants";
-import logoImage from "../imports/logo-1.jpeg";
+import { NAV } from "../data/constants"
 
 export default function Footer() {
   return (
@@ -7,9 +6,11 @@ export default function Footer() {
       <div className="mx-auto flex max-w-[90%] flex-col gap-8 px-6 py-12 lg:flex-row lg:items-center lg:justify-between lg:px-10">
         <a href="#top" className="flex items-center">
           <img
-            src={logoImage}
+            src="/logo/logo-1.jpeg"
             alt="Gulf Paradigm General Contracting logo"
-            className="h-10 w-auto sm:h-11"
+            loading="lazy"
+            decoding="async"
+            className="h-11 w-auto sm:h-12 lg:h-13"
           />
         </a>
         <nav className="flex flex-wrap gap-x-8 gap-y-3">
@@ -28,5 +29,5 @@ export default function Footer() {
         </div>
       </div>
     </footer>
-  );
+  )
 }

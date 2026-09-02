@@ -1,8 +1,20 @@
 export function LogoMark({ className = "" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 64 64" className={className} fill="none" aria-hidden="true">
+    <svg
+      viewBox="0 0 64 64"
+      className={className}
+      fill="none"
+      aria-hidden="true"
+    >
       <defs>
-        <linearGradient id="gp-globe" x1="8" y1="8" x2="56" y2="56" gradientUnits="userSpaceOnUse">
+        <linearGradient
+          id="gp-globe"
+          x1="8"
+          y1="8"
+          x2="56"
+          y2="56"
+          gradientUnits="userSpaceOnUse"
+        >
           <stop stopColor="#35c0ee" />
           <stop offset="1" stopColor="#1489c2" />
         </linearGradient>
@@ -22,12 +34,21 @@ export function LogoMark({ className = "" }: { className?: string }) {
         strokeLinecap="round"
         opacity="0.55"
       />
-      <path d="M32 14l2.4 5 5 2.4-5 2.4L32 29l-2.4-5-5-2.4 5-2.4L32 14z" fill="#fff" />
+      <path
+        d="M32 14l2.4 5 5 2.4-5 2.4L32 29l-2.4-5-5-2.4 5-2.4L32 14z"
+        fill="#fff"
+      />
     </svg>
-  );
+  )
 }
 
-export function Wordmark({ className = "", dark = false }: { className?: string; dark?: boolean }) {
+export function Wordmark({
+  className = "",
+  dark = false,
+}: {
+  className?: string
+  dark?: boolean
+}) {
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <LogoMark className="h-9 w-9 shrink-0" />
@@ -48,5 +69,5 @@ export function Wordmark({ className = "", dark = false }: { className?: string;
         </div>
       </div>
     </div>
-  );
+  )
 }
