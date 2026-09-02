@@ -1,4 +1,4 @@
-import { NAV } from "../data/constants"
+import { NAV } from "../data/constants";
 
 export default function Footer() {
   return (
@@ -26,8 +26,19 @@ export default function Footer() {
         </nav>
         <div className="font-mono text-xs text-steel-500">
           © {new Date().getFullYear()} Gulf Paradigm General Contracting
+          <p>
+            Developed by{" "}
+            <a
+              href="https://github.com/saugat1070"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-600 hover:text-cyan-800"
+            >
+              Saugat Giri
+            </a>
+          </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }
