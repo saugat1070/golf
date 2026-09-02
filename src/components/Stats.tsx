@@ -14,10 +14,10 @@ export default function Stats() {
         >
           {STATS.map((s, i) => (
             <div key={i} className="bg-white px-6 py-10 text-center lg:px-8">
-              <div className="font-display text-4xl font-extrabold text-cyan-600 lg:text-5xl">
+              <div className="font-display text-3xl font-extrabold text-cyan-600 sm:text-4xl lg:text-5xl">
                 {s.value}
               </div>
-              <div className="mt-2 font-sans text-sm text-steel-500">
+              <div className="mt-1.5 sm:mt-2 font-sans text-xs sm:text-sm text-steel-500 font-medium">
                 {s.label}
               </div>
             </div>

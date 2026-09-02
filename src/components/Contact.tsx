@@ -33,7 +33,7 @@ export default function Contact() {
             <h2 className="mt-6 font-display text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl lg:text-6xl">
               Contact <span className="text-cyan-400">Us</span>
             </h2>
-            <p className="mt-4 font-sans leading-relaxed text-steel-300">
+            <p className="mt-3 sm:mt-4 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-300">
               Have a question or want to discuss your next construction project?
               Our team is here to help — we respond fast with the right
               equipment, people and materials.

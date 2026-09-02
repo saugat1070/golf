@@ -12,38 +12,38 @@ export default function About() {
           transition={{ duration: 0.7, ease: "easeOut" }}
         >
           <Kicker>About our company</Kicker>
-          <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-navy-900 lg:text-5xl">
+          <h2 className="font-display text-3xl font-extrabold leading-tight tracking-tight text-navy-900 sm:text-4xl lg:text-5xl">
             A name synonymous with reliability, innovation & excellence
           </h2>
-          <p className="mt-6 font-sans leading-relaxed text-steel-500">
+          <p className="mt-4 sm:mt-6 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             Gulf Paradigm General Contracting is a trusted partner for
             industrial and commercial projects across the Kingdom. From
             equipment rental to manpower supply, material trading, fabrication
             and logistics, every service is backed by precision, efficiency and
             adherence to the highest quality standards.
           </p>
-          <p className="mt-4 font-sans leading-relaxed text-steel-500">
+          <p className="mt-3 sm:mt-4 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             By integrating advanced technologies and industry best practices, we
             ensure seamless project execution while prioritising safety,
             sustainability and client satisfaction.
           </p>
 
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            <div className="rounded-md border border-navy-900/10 border-l-2 border-l-cyan-500 bg-steel-100 p-6">
-              <h3 className="font-display text-lg font-bold text-navy-900">
+          <div className="mt-8 sm:mt-10 grid gap-4 sm:gap-6 sm:grid-cols-2">
+            <div className="rounded-xl border border-navy-900/10 border-l-2 border-l-cyan-500 bg-steel-100 p-4 sm:p-6">
+              <h3 className="font-display text-base sm:text-lg font-bold text-navy-900">
                 Our Vision
               </h3>
-              <p className="mt-2 font-sans text-sm leading-relaxed text-steel-500">
+              <p className="mt-1.5 sm:mt-2 font-sans text-xs sm:text-sm leading-relaxed text-steel-500">
                 To redefine industry standards with innovative, efficient
                 solutions — fostering lasting partnerships that exceed
                 expectations.
               </p>
             </div>
-            <div className="rounded-md border border-navy-900/10 border-l-2 border-l-cyan-500 bg-steel-100 p-6">
-              <h3 className="font-display text-lg font-bold text-navy-900">
+            <div className="rounded-xl border border-navy-900/10 border-l-2 border-l-cyan-500 bg-steel-100 p-4 sm:p-6">
+              <h3 className="font-display text-base sm:text-lg font-bold text-navy-900">
                 Our Mission
               </h3>
-              <p className="mt-2 font-sans text-sm leading-relaxed text-steel-500">
+              <p className="mt-1.5 sm:mt-2 font-sans text-xs sm:text-sm leading-relaxed text-steel-500">
                 Committed to quality, integrity and excellence — prioritising
                 safety, technology and sustainability in the contracting sector.
               </p>

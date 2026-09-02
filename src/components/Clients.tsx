@@ -35,10 +35,10 @@ export default function Clients() {
             </span>
             <span className="h-px w-8 bg-cyan-500/50" />
           </div>
-          <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-white lg:text-5xl">
+          <h2 className="font-display text-2xl sm:text-4xl font-extrabold leading-tight tracking-tight text-white lg:text-5xl">
             Trusted by the Kingdom's leading operators
           </h2>
-          <p className="mt-6 font-sans leading-relaxed text-steel-300">
+          <p className="mt-3 sm:mt-6 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-300">
             We proudly serve the region's foremost energy, petrochemical and
             engineering organisations — delivering to the standards they demand.
           </p>

@@ -67,24 +67,24 @@ export default function Operations() {
           <h2 className="font-display text-4xl font-extrabold leading-tight tracking-tight text-navy-900 lg:text-5xl">
             Single-Source Execution — From Yard to Site Handover
           </h2>
-          <p className="mt-6 max-w-lg font-sans leading-relaxed text-steel-500">
+          <p className="mt-4 sm:mt-6 max-w-lg font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             Gulf Paradigm synchronizes heavy equipment rentals, certified site
             manpower, industrial materials, and steel fabrication into a
             seamless operational pipeline. Our regional logistics network
             guarantees zero downtime and rapid mobilization across Saudi
             Arabia&apos;s major industrial hubs.
           </p>
-          <div className="mt-8 space-y-4">
+          <div className="mt-6 sm:mt-8 space-y-3.5 sm:space-y-4">
             {highlights.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4">
-                <div className="mt-1 flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 font-bold text-xs">
+              <div key={idx} className="flex items-start gap-3 sm:gap-4">
+                <div className="mt-0.5 flex h-5 w-5 sm:h-6 sm:w-6 shrink-0 items-center justify-center rounded-full bg-cyan-500/10 text-cyan-600 font-bold text-[0.65rem] sm:text-xs">
                   0{idx + 1}
                 </div>
                 <div>
-                  <h3 className="font-sans text-base font-bold text-navy-900">
+                  <h3 className="font-sans text-sm sm:text-base font-bold text-navy-900">
                     {item.title}
                   </h3>
-                  <p className="font-sans text-sm text-steel-500 leading-snug">
+                  <p className="font-sans text-xs sm:text-sm text-steel-500 leading-relaxed mt-0.5">
                     {item.desc}
                   </p>
                 </div>
