@@ -51,14 +51,14 @@ export default function Contact() {
                 {
                   icon: "☎",
                   label: "Phone",
-                  value: "+966 13 832 2804",
-                  href: "tel:+966138322804",
+                  value: "+966 54 378 9114",
+                  href: "tel:+966543789114",
                 },
                 {
                   icon: "💬",
                   label: "WhatsApp",
-                  value: "+966 13 832 2804",
-                  href: "https://wa.me/966138322804?text=Hello%20Gulf%20Paradigm!%20I%20would%20like%20to%20inquire%20about%20your%20services.",
+                  value: "+966 54 378 9114",
+                  href: "https://wa.me/966543789114?text=Hello%20Gulf%20Paradigm!%20I%20would%20like%20to%20inquire%20about%20your%20services.",
                   external: true,
                 },
                 {
@@ -121,7 +121,7 @@ export default function Contact() {
                 key={platform}
                 href={
                   platform === "whatsapp"
-                    ? "https://wa.me/966138322804?text=Hello%20Gulf%20Paradigm!%20I%20would%20like%20to%20inquire%20about%20your%20services."
+                    ? "https://wa.me/966543789114?text=Hello%20Gulf%20Paradigm!%20I%20would%20like%20to%20inquire%20about%20your%20services."
                     : "#"
                 }
                 target={platform === "whatsapp" ? "_blank" : undefined}
@@ -188,10 +188,10 @@ export default function Contact() {
               Phone :
             </p>
             <a
-              href="tel:+966138322804"
+              href="tel:+966543789114"
               className="font-sans text-base font-semibold text-navy-900 transition-colors hover:text-cyan-600"
             >
-              +966 13 832 2804
+              +966 54 378 9114
             </a>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-const WHATSAPP_NUMBER = "966138322804";
+const WHATSAPP_NUMBER = "966543789114";
 const WHATSAPP_MESSAGE = encodeURIComponent(
   "Hello Gulf Paradigm! I would like to inquire about your contracting and industrial services."
 );
