@@ -17,7 +17,9 @@ export default function Footer() {
           {NAV.map((n) => (
             <a
               key={n.id}
-              href={`#${n.id}`}
+              href={n.href || `#${n.id}`}
+              target={n.href ? "_blank" : undefined}
+              rel={n.href ? "noopener noreferrer" : undefined}
               className="font-sans text-sm text-steel-500 transition-colors hover:text-cyan-600"
             >
               {n.label}
