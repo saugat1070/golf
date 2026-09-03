@@ -5,13 +5,13 @@ import Kicker from "./Kicker";
 
 const VISUALS: Record<string, { img: string; alt: string; span: string }> = {
   "Earth Moving": {
-    img: "https://images.unsplash.com/photo-1583024011792-b165975b52f5?w=1000&h=700&fit=crop&auto=format&q=80",
+    img: "/images/services/rquipment.jpeg",
     alt: "Heavy excavator and earthmoving equipment on a construction site",
     span: "lg:col-span-2 lg:row-span-2",
   },
   Lifting: {
-    img: "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=700&h=500&fit=crop&auto=format&q=80",
-    alt: "Tower cranes at a large industrial construction project",
+    img: "/images/services/requipment-2.jpg",
+    alt: "Heavy crane lifting and material handling equipment",
     span: "lg:col-span-1",
   },
   Transportation: {

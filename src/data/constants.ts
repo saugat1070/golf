@@ -27,6 +27,7 @@ export const SERVICES = [
       "/images/services/frp-2.jpg",
       "/images/services/frp-3.jpg",
       "/images/services/frp-4.jpg",
+      "/images/services/frg-6.jpeg",
     ],
     points: [
       "Structural steel fabrication & frameworks",
@@ -88,6 +89,11 @@ export const SERVICES = [
     tag: "Rent with confidence, build with excellence",
     body: "A well-maintained fleet of high-performance machinery — from heavy earthmoving to lifting and material handling — with rigorous inspection and maintenance protocols on every unit.",
     img: "/images/services/equpment_rental.jpg",
+    images: [
+      "/images/services/equpment_rental.jpg",
+      "/images/services/requipment-2.jpg",
+      "/images/services/rquipment.jpeg",
+    ],
     points: [
       "Earth moving equipment",
       "Lifting & cranes",
