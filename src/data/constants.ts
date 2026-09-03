@@ -15,8 +15,45 @@ export const STATS = [
 
 export const SERVICES = [
   {
-    id: "equipment",
+    id: "fabrication",
     n: "01",
+    title: "Fabrication & Cabins",
+    tag: "Built to standard, ready to move",
+    body: "High-quality steel fabrication, pre-engineered structures and modular portable cabins — from storage units to full site offices, quick to install and mobilise.",
+    img: "/images/services/fabrication.jpg",
+    points: [
+      "Structural steel fabrication",
+      "Pre-engineered structures",
+      "Portable site offices",
+      "Modular storage units",
+    ],
+    fleetCategories: [
+      {
+        cat: "Modular Cabins & Site Facilities",
+        items: [
+          "Executive Site Office Cabins",
+          "Modular Staff Accommodation Units",
+          "Complete Ablution & Sanitary Containers",
+          "Site Dining & Kitchen Facilities",
+          "Heavy-Duty Security & Guard Cabins",
+          "Secure Tool & Equipment Storage Units",
+        ],
+      },
+      {
+        cat: "Fabrication Capabilities",
+        items: [
+          "Custom Structural Steel Framing",
+          "Pre-Engineered Building Frameworks",
+          "Pipe Spools & Pressure Skids",
+          "Storage Tanks & Silo Fabrication",
+          "Grit Blasting & Multi-Coat Industrial Painting",
+        ],
+      },
+    ],
+  },
+  {
+    id: "equipment",
+    n: "02",
     title: "Equipment Rental",
     tag: "Rent with confidence, build with excellence",
     body: "A well-maintained fleet of high-performance machinery — from heavy earthmoving to lifting and material handling — with rigorous inspection and maintenance protocols on every unit.",
@@ -81,7 +118,7 @@ export const SERVICES = [
   },
   {
     id: "manpower",
-    n: "02",
+    n: "03",
     title: "Manpower Supply",
     tag: "Skilled, dependable, deployment-ready",
     body: "Certified, screened and continuously trained professionals across every discipline — engineered for reliability, precision and safety on industrial sites.",
@@ -117,7 +154,7 @@ export const SERVICES = [
   },
   {
     id: "material",
-    n: "03",
+    n: "04",
     title: "Material Supply",
     tag: "Sourcing materials, powering progress",
     body: "High-grade materials from structural steel to safety gear, backed by a resilient supply chain and on-time delivery that protects project integrity.",
@@ -148,43 +185,6 @@ export const SERVICES = [
           "Medium & Low Voltage Armored Cables",
           "Switchgear, Panels & Explosion-Proof Enclosures",
           "Lifting Slings, Webbing & Certified Shackles",
-        ],
-      },
-    ],
-  },
-  {
-    id: "fabrication",
-    n: "04",
-    title: "Fabrication & Cabins",
-    tag: "Built to standard, ready to move",
-    body: "High-quality steel fabrication, pre-engineered structures and modular portable cabins — from storage units to full site offices, quick to install and mobilise.",
-    img: "/images/services/fabrication.jpg",
-    points: [
-      "Structural steel fabrication",
-      "Pre-engineered structures",
-      "Portable site offices",
-      "Modular storage units",
-    ],
-    fleetCategories: [
-      {
-        cat: "Modular Cabins & Site Facilities",
-        items: [
-          "Executive Site Office Cabins",
-          "Modular Staff Accommodation Units",
-          "Complete Ablution & Sanitary Containers",
-          "Site Dining & Kitchen Facilities",
-          "Heavy-Duty Security & Guard Cabins",
-          "Secure Tool & Equipment Storage Units",
-        ],
-      },
-      {
-        cat: "Fabrication Capabilities",
-        items: [
-          "Custom Structural Steel Framing",
-          "Pre-Engineered Building Frameworks",
-          "Pipe Spools & Pressure Skids",
-          "Storage Tanks & Silo Fabrication",
-          "Grit Blasting & Multi-Coat Industrial Painting",
         ],
       },
     ],
