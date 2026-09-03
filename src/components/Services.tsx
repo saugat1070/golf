@@ -36,6 +36,20 @@ function ServiceModal({
   svc: ServiceItem;
   onClose: () => void;
 }) {
+  const images: string[] =
+    "images" in svc && Array.isArray(svc.images) && svc.images.length > 0
+      ? (svc.images as string[])
+      : [svc.img];
+  const [modalImgIndex, setModalImgIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setModalImgIndex((prev) => (prev + 1) % images.length);
+    }, 4500);
+    return () => clearInterval(timer);
+  }, [images.length]);
+
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -91,16 +105,44 @@ function ServiceModal({
         {/* scrollable content */}
         <div className="overflow-y-auto no-scrollbar">
           {/* Header Visual Banner */}
-          <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden">
-            <img
-              src={svc.img}
-              alt={svc.title}
-              className="h-full w-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/40 to-transparent" />
+          <div className="relative h-64 sm:h-72 md:h-80 w-full overflow-hidden bg-navy-950">
+            <AnimatePresence initial={false}>
+              <motion.img
+                key={images[modalImgIndex]}
+                src={images[modalImgIndex]}
+                alt={svc.title}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.8, ease: "easeInOut" }}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </AnimatePresence>
+            <div className="absolute inset-0 bg-gradient-to-t from-navy-950/95 via-navy-950/40 to-transparent pointer-events-none" />
+
+            {/* If multiple images, show dots indicator */}
+            {images.length > 1 && (
+              <div className="absolute top-4 left-4 z-20 flex items-center gap-1.5 rounded-full bg-navy-950/80 px-3 py-1.5 backdrop-blur-md ring-1 ring-white/15">
+                {images.map((_, idx) => (
+                  <button
+                    key={idx}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setModalImgIndex(idx);
+                    }}
+                    className={`h-1.5 rounded-full transition-all duration-300 ${
+                      idx === modalImgIndex
+                        ? "w-5 bg-cyan-400 shadow-sm shadow-cyan-400/50"
+                        : "w-1.5 bg-white/40 hover:bg-white/70"
+                    }`}
+                    aria-label={`View photo ${idx + 1}`}
+                  />
+                ))}
+              </div>
+            )}
 
             {/* Title Overlay in Banner */}
-            <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8">
+            <div className="absolute bottom-0 inset-x-0 p-6 sm:p-8 pointer-events-none">
               <span className="inline-flex items-center rounded-full bg-cyan-500/20 border border-cyan-400/30 px-3.5 py-1 font-mono text-xs font-bold text-cyan-300 backdrop-blur-md">
                 Service {svc.n}
               </span>
@@ -164,36 +206,76 @@ function ServiceModal({
               <div>
                 <div className="flex items-center justify-between mb-4">
                   <h3 className="font-display text-lg font-bold text-navy-900">
-                    Fleet, Machinery & Equipment Catalog
+                    {svc.id === "fabrication"
+                      ? "Operational Units & Technical Capabilities"
+                      : "Fleet, Machinery & Equipment Catalog"}
                   </h3>
                   <span className="font-mono text-xs font-semibold text-cyan-600 uppercase tracking-wider">
-                    Operational Units
+                    {svc.id === "fabrication" ? "Specifications" : "Operational Units"}
                   </span>
                 </div>
 
                 <div className="space-y-4">
-                  {svc.fleetCategories.map((group) => (
-                    <div
-                      key={group.cat}
-                      className="rounded-2xl border border-navy-900/10 bg-white p-5 shadow-sm"
-                    >
-                      <h4 className="font-display text-sm font-bold text-navy-900 mb-3 flex items-center gap-2">
-                        <span className="h-2 w-2 rounded-full bg-cyan-500" />
-                        {group.cat}
-                      </h4>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
-                        {group.items.map((item) => (
-                          <div
-                            key={item}
-                            className="flex items-center gap-2 rounded-lg bg-steel-100/80 px-3 py-2 text-xs font-medium text-steel-500"
-                          >
-                            <span className="h-1 w-1 rounded-full bg-cyan-500 shrink-0" />
-                            <span className="line-clamp-1">{item}</span>
-                          </div>
-                        ))}
+                  {svc.fleetCategories.map((group) => {
+                    const hasDescriptiveItems = group.items.some((it) =>
+                      it.includes(":"),
+                    );
+
+                    return (
+                      <div
+                        key={group.cat}
+                        className="rounded-2xl border border-navy-900/10 bg-white p-5 shadow-sm"
+                      >
+                        <h4 className="font-display text-sm font-bold text-navy-900 mb-3 flex items-center gap-2">
+                          <span className="h-2 w-2 rounded-full bg-cyan-500" />
+                          {group.cat}
+                        </h4>
+                        <div
+                          className={`grid gap-2.5 ${
+                            hasDescriptiveItems
+                              ? "grid-cols-1 md:grid-cols-2"
+                              : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                          }`}
+                        >
+                          {group.items.map((item) => {
+                            const colonIdx = item.indexOf(":");
+                            const hasColon = colonIdx > -1;
+                            const title = hasColon
+                              ? item.slice(0, colonIdx)
+                              : item;
+                            const desc = hasColon
+                              ? item.slice(colonIdx + 1).trim()
+                              : null;
+
+                            return (
+                              <div
+                                key={item}
+                                className={`flex items-start gap-2.5 rounded-xl bg-steel-100/80 px-3 py-2.5 text-xs border border-navy-900/5 transition-colors hover:bg-steel-100 ${
+                                  desc ? "h-full" : ""
+                                }`}
+                              >
+                                <span className="h-1.5 w-1.5 rounded-full bg-cyan-500 shrink-0 mt-1.5" />
+                                <div className="flex-1 min-w-0">
+                                  <span
+                                    className={`font-semibold text-navy-900 ${
+                                      desc ? "block mb-0.5" : ""
+                                    }`}
+                                  >
+                                    {title}
+                                  </span>
+                                  {desc && (
+                                    <span className="text-steel-600 leading-relaxed text-[0.8rem] block">
+                                      {desc}
+                                    </span>
+                                  )}
+                                </div>
+                              </div>
+                            );
+                          })}
+                        </div>
                       </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -244,6 +326,19 @@ function ServiceCard({
 }) {
   const span = SERVICE_SPANS[svc.id] ?? "lg:col-span-1";
   const isLarge = span.includes("col-span-2");
+  const images: string[] =
+    "images" in svc && Array.isArray(svc.images) && svc.images.length > 0
+      ? (svc.images as string[])
+      : [svc.img];
+  const [currentImgIndex, setCurrentImgIndex] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= 1) return;
+    const interval = setInterval(() => {
+      setCurrentImgIndex((prev) => (prev + 1) % images.length);
+    }, 4500);
+    return () => clearInterval(interval);
+  }, [images.length]);
 
   return (
     <motion.div
@@ -258,23 +353,44 @@ function ServiceCard({
       } ${span}`}
       onClick={() => onSelect(svc)}
     >
-      {/* photo */}
-      <img
-        src={svc.img}
-        alt={svc.title}
-        loading="lazy"
-        decoding="async"
-        className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-      />
+      {/* photo slideshow with cross-fade */}
+      <AnimatePresence initial={false}>
+        <motion.img
+          key={images[currentImgIndex]}
+          src={images[currentImgIndex]}
+          alt={svc.title}
+          loading="lazy"
+          decoding="async"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
+          className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      </AnimatePresence>
 
       {/* permanent dark gradient */}
       <div className="absolute inset-0 bg-gradient-to-t from-navy-950/92 via-navy-950/35 to-transparent pointer-events-none" />
 
-      {/* service number badge */}
-      <div className="absolute top-5 left-5 z-10">
+      {/* service number badge & slideshow indicators */}
+      <div className="absolute top-5 left-5 z-10 flex items-center gap-2">
         <span className="inline-flex items-center rounded-full bg-navy-950/80 px-3.5 py-1.5 font-mono text-xs font-bold text-cyan-400 backdrop-blur-md ring-1 ring-white/15">
           {svc.n}
         </span>
+        {images.length > 1 && (
+          <div className="flex items-center gap-1 rounded-full bg-navy-950/80 px-2.5 py-1.5 backdrop-blur-md ring-1 ring-white/15">
+            {images.map((_, i) => (
+              <span
+                key={i}
+                className={`h-1.5 rounded-full transition-all duration-300 ${
+                  i === currentImgIndex
+                    ? "w-4 bg-cyan-400 shadow-sm shadow-cyan-400/50"
+                    : "w-1.5 bg-white/40"
+                }`}
+              />
+            ))}
+          </div>
+        )}
       </div>
 
       {/* always-visible footer */}

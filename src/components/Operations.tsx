@@ -49,7 +49,7 @@ export default function Operations() {
     },
     {
       title: "Turnkey Procurement & Fabrication",
-      desc: "Integrated material supply, custom structural steel fabrication, and modular site cabins delivered in a single workflow.",
+      desc: "Integrated material supply, structural steel & FRP composite fabrication, and modular site cabins delivered in a single workflow.",
     },
   ];
 
@@ -69,10 +69,10 @@ export default function Operations() {
           </h2>
           <p className="mt-4 sm:mt-6 max-w-lg font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             Gulf Paradigm synchronizes heavy equipment rentals, certified site
-            manpower, industrial materials, and steel fabrication into a
-            seamless operational pipeline. Our regional logistics network
-            guarantees zero downtime and rapid mobilization across Saudi
-            Arabia&apos;s major industrial hubs.
+            manpower, industrial materials, structural steel & FRP composite
+            fabrication into a seamless operational pipeline. Our regional
+            logistics network guarantees zero downtime and rapid mobilization
+            across Saudi Arabia&apos;s major industrial hubs.
           </p>
           <div className="mt-6 sm:mt-8 space-y-3.5 sm:space-y-4">
             {highlights.map((item, idx) => (

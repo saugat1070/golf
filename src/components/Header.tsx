@@ -1,26 +1,26 @@
-import { useEffect, useState } from "react"
-import { NAV } from "../data/constants"
+import { useEffect, useState } from "react";
+import { NAV } from "../data/constants";
 
 export default function Header() {
-  const [scrolled, setScrolled] = useState(false)
-  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24)
-    onScroll()
-    window.addEventListener("scroll", onScroll)
-    return () => window.removeEventListener("scroll", onScroll)
-  }, [])
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const go = (id: string) => {
-    setOpen(false)
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" })
-  }
+    setOpen(false);
+    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "border-b border-navy-900/10 bg-white/90 shadow-sm backdrop-blur-md"
+          ? "border-b border-navy-900/10 bg-white/99 shadow-sm backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
@@ -83,5 +83,5 @@ export default function Header() {
         </div>
       )}
     </header>
-  )
+  );
 }

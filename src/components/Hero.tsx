@@ -23,6 +23,10 @@ const SLIDES = [
     alt: "Structural steel fabrication and modular pre-engineered structures",
   },
   {
+    src: "/images/services/frp.jpg",
+    alt: "FRP fabrication, modular enclosures and composite solutions",
+  },
+  {
     src: "https://images.unsplash.com/photo-1583024011792-b165975b52f5?w=1600&h=700&fit=crop&auto=format&q=80",
     alt: "Heavy excavator and earthmoving equipment on site",
   },

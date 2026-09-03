@@ -17,15 +17,23 @@ export const SERVICES = [
   {
     id: "fabrication",
     n: "01",
-    title: "Fabrication & Cabins",
-    tag: "Built to standard, ready to move",
-    body: "High-quality steel fabrication, pre-engineered structures and modular portable cabins — from storage units to full site offices, quick to install and mobilise.",
+    title: "Fabrication, Cabins & FRP Solutions",
+    tag: "Built to standard, ready to move · Durable & sustainable composite solutions",
+    body: "End-to-end fabrication, modular building, and Fiber Reinforced Plastic (FRP) composite solutions — spanning custom structural steel, pre-engineered structures, and portable cabins to high-performance FRP enclosures, chemical tanks, and flow systems. Engineered for durability, rapid mobilization, and extreme corrosion resistance across construction, utilities, oil & gas, and manufacturing sectors.",
     img: "/images/services/fabrication.jpg",
+    images: [
+      "/images/services/fabrication.jpg",
+      "/images/services/frp.jpg",
+    ],
     points: [
-      "Structural steel fabrication",
-      "Pre-engineered structures",
-      "Portable site offices",
-      "Modular storage units",
+      "Structural steel fabrication & frameworks",
+      "Modular portable cabins & site offices",
+      "FRP enclosures & electrical/telecom kiosks",
+      "FRP pultrusion profiles & structural frames",
+      "FRP custom moulded products & architecture",
+      "FRP chemical & water storage tanks",
+      "Access & safety systems (gratings & ladders)",
+      "Piping, flow systems & protective FRP linings",
     ],
     fleetCategories: [
       {
@@ -40,13 +48,32 @@ export const SERVICES = [
         ],
       },
       {
-        cat: "Fabrication Capabilities",
+        cat: "FRP Enclosures & Operational Units",
         items: [
-          "Custom Structural Steel Framing",
+          "Electrical & Telecom Kiosks: Weatherproof and UV-stable FRP housing with customized access panels and ventilation options.",
+          "Industrial & Cleanroom Doors: Corrosion-proof and fire-resistant FRP doors tailored for specialized industrial environments.",
+          "Custom Moulded Solutions: Bespoke FRP composite designs crafted to match complex architectural, functional, and spatial needs.",
+          "Site Architecture & Signage: UV-protected FRP Sunshades and weatherproof, fade-resistant FRP Signboards.",
+        ],
+      },
+      {
+        cat: "Structural Steel & Metal Fabrication",
+        items: [
+          "Custom Structural Steel Framing & Trusses",
           "Pre-Engineered Building Frameworks",
-          "Pipe Spools & Pressure Skids",
+          "Industrial Pipe Spools & Pressure Skids",
           "Storage Tanks & Silo Fabrication",
-          "Grit Blasting & Multi-Coat Industrial Painting",
+          "Grit Blasting & Multi-Coat Protective Painting",
+        ],
+      },
+      {
+        cat: "FRP Fabrication Capabilities & Flow Systems",
+        items: [
+          "Structural Frameworks: High-strength, lightweight FRP Pultrusion Profiles ideal for structural frames, supports, and reinforcements.",
+          "Access & Safety Systems: Anti-slip FRP Gratings, ergonomic FRP Handrails, and non-conductive FRP Ladders & Platforms.",
+          "Piping & Flow Systems: Filament wound and centrifugal cast FRP Pipes with flanged or bell & spigot joints.",
+          "Protection Services: Internal FRP Linings for extended pipeline/tank lifespan, precision-engineered fittings, and complete on-site FRP lamination works.",
+          "FRP Chemical & Water Storage Tanks: High-performance chemical and water storage tanks engineered for aggressive environments.",
         ],
       },
     ],
@@ -236,9 +263,15 @@ export const OPERATIONS_SLIDES = [
   },
   {
     id: "fabrication",
-    title: "Fabrication & Cabins",
+    title: "Fabrication & Modular Cabins",
     img: "/images/services/fabrication.png",
     alt: "Structural steel fabrication and portable site cabins",
+  },
+  {
+    id: "frp",
+    title: "FRP Fabrication & Enclosures",
+    img: "/images/services/frp-nb.png",
+    alt: "FRP composite fabrication, modular enclosures, and tanks",
   },
   {
     id: "logistics",

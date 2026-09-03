@@ -26,7 +26,7 @@ export default function Footer() {
         </nav>
         <div className="font-mono text-xs text-steel-500">
           © {new Date().getFullYear()} Gulf Paradigm General Contracting
-          <p>
+          {/* <p>
             Developed by{" "}
             <a
               href="https://github.com/saugat1070"
@@ -36,7 +36,7 @@ export default function Footer() {
             >
               Saugat Giri
             </a>
-          </p>
+          </p> */}
         </div>
       </div>
     </footer>

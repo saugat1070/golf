@@ -18,9 +18,10 @@ export default function About() {
           <p className="mt-4 sm:mt-6 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             Gulf Paradigm General Contracting is a trusted partner for
             industrial and commercial projects across the Kingdom. From
-            equipment rental to manpower supply, material trading, fabrication
-            and logistics, every service is backed by precision, efficiency and
-            adherence to the highest quality standards.
+            equipment rental to manpower supply, material trading, steel & FRP
+            fabrication, modular cabins and logistics, every service is backed
+            by precision, efficiency and adherence to the highest quality
+            standards.
           </p>
           <p className="mt-3 sm:mt-4 font-sans text-xs sm:text-sm md:text-base leading-relaxed text-steel-500">
             By integrating advanced technologies and industry best practices, we
