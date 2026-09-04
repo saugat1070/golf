@@ -25,13 +25,13 @@ export default function Header() {
       }`}
     >
       <div className="mx-auto flex max-w-[90%] items-center justify-between px-6 py-4 lg:px-10">
-        <button onClick={() => go("top")} className="text-left">
+        <button onClick={() => go("top")} className="text-left py-1">
           <img
             src="/logo/logo-1.jpeg"
             alt="Gulf Paradigm General Contracting logo"
             loading="lazy"
             decoding="async"
-            className="h-11 w-auto sm:h-12 lg:h-13"
+            className="h-14 w-auto sm:h-16 lg:h-20 object-contain transition-transform duration-200 hover:scale-105"
           />
         </button>
         <nav className="hidden items-center gap-8 lg:flex">

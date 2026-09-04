@@ -10,7 +10,7 @@ export default function Footer() {
             alt="Gulf Paradigm General Contracting logo"
             loading="lazy"
             decoding="async"
-            className="h-11 w-auto sm:h-12 lg:h-13"
+            className="h-14 w-auto sm:h-16 lg:h-20 object-contain"
           />
         </a>
         <nav className="flex flex-wrap gap-x-8 gap-y-3">

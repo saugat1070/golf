@@ -112,13 +112,13 @@ export default function Hero() {
           <div className="absolute bottom-0 inset-x-0 h-20 bg-gradient-to-t from-white/20 to-transparent pointer-events-none" />
 
           {/* Floating Company Logo Badge — visible on tablet/desktop, hidden on mobile */}
-          <div className="absolute bottom-5 right-5 z-20 hidden sm:flex items-center rounded-2xl bg-white/95 px-6 py-3.5 shadow-xl shadow-navy-900/15 backdrop-blur ring-1 ring-navy-900/10 sm:bottom-6 sm:right-6">
+          <div className="absolute bottom-5 right-5 z-20 hidden sm:flex items-center rounded-2xl bg-white/95 px-6 py-4 shadow-xl shadow-navy-900/15 backdrop-blur ring-1 ring-navy-900/10 sm:bottom-6 sm:right-6">
             <img
               src="/logo/logo-1.jpeg"
               alt="Gulf Paradigm General Contracting logo"
               loading="lazy"
               decoding="async"
-              className="h-12 sm:h-14 lg:h-16 w-auto"
+              className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
             />
           </div>
 
