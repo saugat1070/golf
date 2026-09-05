@@ -3,7 +3,7 @@ name: Deploy GulfParadigmFrontend
 on:
   push:
     branches:
-      - main
+      - production
 
 jobs:
   deploy:
