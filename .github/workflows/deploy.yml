@@ -48,3 +48,4 @@ jobs:
       # 9. Reload Nginx
       - name: Reload Nginx
         run: sudo systemctl reload nginx
+
