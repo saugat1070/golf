@@ -1,0 +1,60 @@
+server {
+    server_name gulfparadigm.com www.gulfparadigm.com;
+
+    root /var/www/gulfparadigm;
+    index index.html;
+
+    # Never cache root-level files (typically copied from Vite's public/)
+    location ~ ^/[^/]+\.(js|json|png|jpg|jpeg|gif|svg|ico|webmanifest|xml|txt|pdf|webp)$ {
+        expires -1;
+        etag off;
+
+        add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0" always;
+        add_header Pragma "no-cache" always;
+        add_header Expires "0" always;
+
+        try_files $uri =404;
+    }
+
+    # Cache hashed assets forever
+    location /assets/ {
+        expires 1y;
+        add_header Cache-Control "public, immutable";
+        try_files $uri =404;
+    }
+
+    # React SPA routing
+    location / {
+        try_files $uri /index.html;
+    }
+
+    # Deny access to hidden files like .env
+    location ~ /\. {
+        deny all;
+    }
+
+    # Optional: Gzip compression for faster load
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript text/xml application/xml application/xml+rss text/javascript;
+    gzip_min_length 256;
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/gulfparadigm.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/gulfparadigm.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+}
+
+server {
+    if ($host = www.gulfparadigm.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    if ($host = gulfparadigm.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+    listen 80;
+    server_name gulfparadigm.com www.gulfparadigm.com;
+    return 404; # managed by Certbot
+}

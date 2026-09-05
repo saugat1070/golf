@@ -1,0 +1,9 @@
+services:
+  fronted:
+      build:
+         context: .
+         dockerfile: Dockerfile
+      container_name: GulfParadigm-Frontend
+      ports:
+          - "8443:8443"
+      restart: unless-stopped
