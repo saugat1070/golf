@@ -1,0 +1,50 @@
+name: Deploy GulfParadigmFrontend
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      # 1. Checkout code
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      # 2. Install dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # 3. Create .env file from GitHub Secrets 
+      # - name: Create .env file
+      #   run: |
+      #     cat <<EOF > .env
+      #     VITE_API_BASE_URL=${{ secrets.VITE_API_BASE_URL }}
+      #     EOF
+
+      # 4. Build frontend
+      - name: Build frontend
+        run: npm run build
+
+      # 5. Ensure deployment folder exists
+      - name: Ensure deployment folder
+        run: sudo mkdir -p /var/www/gulfparadigm
+
+      # 6. Remove old build
+      - name: Clean old build
+        run: sudo rm -rf /var/www/gulfparadigm/*
+
+      # 7. Copy new build
+      - name: Deploy build
+        run: sudo cp -r dist/* /var/www/gulfparadigm/
+
+      # 8. Test Nginx config
+      - name: Test Nginx Config
+        run: sudo nginx -t
+
+      # 9. Reload Nginx
+      - name: Reload Nginx
+        run: sudo systemctl reload nginx
