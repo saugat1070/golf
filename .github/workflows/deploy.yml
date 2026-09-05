@@ -31,21 +31,21 @@ jobs:
 
       # 5. Ensure deployment folder exists
       - name: Ensure deployment folder
-        run: mkdir -p /var/www/gulfparadigm
+        run: echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S mkdir -p /var/www/gulfparadigm
 
       # 6. Remove old build
       - name: Clean old build
-        run: rm -rf /var/www/gulfparadigm/*
+        run: echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S rm -rf /var/www/gulfparadigm/*
 
       # 7. Copy new build
       - name: Deploy build
-        run: cp -r dist/* /var/www/gulfparadigm/
+        run: echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S cp -r dist/* /var/www/gulfparadigm/
 
       # 8. Test Nginx config
       - name: Test Nginx Config
-        run: nginx -t
+        run: echo "${{ secrets.SUDO_PASSWORD }}" | sudo -S nginx -t
 
       # 9. Reload Nginx
       - name: Reload Nginx
-        run: systemctl reload nginx
+        run: sudo systemctl reload nginx
 
